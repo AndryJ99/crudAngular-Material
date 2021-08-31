@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <span>SSSSICURAZIONE</span>
+</mat-toolbar>
+
+
+
+<mat-drawer-container class="example-container sidenav-drawer">
+  <mat-drawer mode="over" #sidenav>
+
+    <mat-list role="list">
+      <mat-list-item role="listitem" id="dashboard" [ngClass]="{'mat-list-item-clicked' : router.url === '/dashboard'}" (click)="goTo('dashboard')"><mat-icon>dashboard</mat-icon> <span>Dashboard</span></mat-list-item>
+      <mat-list-item role="listitem" id="car-list" [ngClass]="{'mat-list-item-clicked' : router.url === '/car-list'}" (click)="goTo('car-list')"><mat-icon>directions_car</mat-icon> <span>Car List</span></mat-list-item>
+      <mat-list-item role="listitem" id="user-list" [ngClass]="{'mat-list-item-clicked' : router.url === '/user-list'}" (click)="goTo('user-list')"><mat-icon>person</mat-icon> <span>User List</span></mat-list-item>
+    </mat-list>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <button mat-icon-button class="collapse-button" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    </button>
+    <div class="router-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+

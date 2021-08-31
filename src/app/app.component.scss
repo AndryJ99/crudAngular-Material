@@ -1,0 +1,57 @@
+.example-container {
+  background: #ffffff;
+  height: 100%;
+
+
+  mat-drawer{
+    background-color: #fbfbfb;
+    -webkit-box-shadow: 5px 10px 30px 15px rgba(0,0,0,0.1);
+    box-shadow: 5px 10px 30px 15px rgba(0,0,0,0.1);
+    width: 20vw;
+    height: max-content;
+    padding: 2rem;
+    border-radius: 10px;
+    color: #000;
+    margin: .5rem;
+
+    mat-list{
+      mat-list-item{
+        color: black;
+        cursor: pointer;
+        mat-icon{
+          margin-right: 2rem;
+        }
+
+      }.mat-list-item-clicked{
+         color: #0083ff;
+       }
+    }
+
+  }
+
+  .collapse-button{
+    -webkit-box-shadow: 5px 0px 10px 1px rgba(0,0,0,0.22);
+    box-shadow: 5px 0px 10px 1px rgba(0,0,0,0.22);
+    border-radius: 0 10px 10px 0;
+    color: #000;
+    margin-top: 1rem;
+    position: absolute;
+    left: 0;
+  }
+
+  .drawer-opened{
+       margin-left: .5rem;
+  }
+
+
+  mat-drawer-content{
+    color: #000;
+    height: 100%;
+    position: relative;
+  }
+}
+
+.router-container{
+  margin: 5.5rem 2rem;
+}
+
