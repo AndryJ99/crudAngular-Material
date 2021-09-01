@@ -1,1 +1,38 @@
-<p>car-list works!</p>
+<div>
+
+    <p-table
+            dataKey="id"
+            [value]="carList"
+            responsiveLayout="scroll"
+            [paginator]="true"
+            [rows]="10"
+            [rowsPerPageOptions]="[10,25,50]"
+    >
+
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="id"><p-sortIcon field="id"></p-sortIcon> <p-columnFilter type="text" field="id" display="menu"></p-columnFilter> Id</th>
+                <th pSortableColumn="car_make"><p-sortIcon field="car_make"></p-sortIcon><p-columnFilter type="text" field="car_make" display="menu"></p-columnFilter> Car Make</th>
+                <th pSortableColumn="car_model"><p-sortIcon field="car_model"></p-sortIcon><p-columnFilter type="text" field="car_model" display="menu"></p-columnFilter> Car Model</th>
+                <th pSortableColumn="user_email"><p-sortIcon field="user_email"></p-sortIcon><p-columnFilter type="text" field="user_email" display="menu"></p-columnFilter> User Email</th>
+                <th pSortableColumn="user_name"><p-sortIcon field="user_name"></p-sortIcon><p-columnFilter type="text" field="user_name" display="menu"></p-columnFilter> User Name</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.car_make}}</td>
+                <td>{{item.car_model}}</td>
+                <td>{{item.user_email}}</td>
+                <td>{{item.user_name}}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-table>
+</div>

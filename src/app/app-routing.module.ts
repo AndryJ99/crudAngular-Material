@@ -6,11 +6,17 @@ import {UserListComponent} from "./pages/user-list/user-list.component";
 
 const routes: Routes = [
   {
-    path: 'dashboard', component: DashboardComponent
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: {subtitle: "DashBoard"}
   },{
-    path: 'car-list', component: CarListComponent
+    path: 'car-list',
+    component: CarListComponent,
+    data: {subtitle: "Car List"}
   },{
-    path: 'user-list', component: UserListComponent
+    path: 'user-list',
+    component: UserListComponent,
+    data: {subtitle: "User List"}
   },
   {path:'',redirectTo:'dashboard', pathMatch: 'full' },
     ];

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProxyServiceService} from "../../shared/proxy-service.service";
 import {Cars, Insurance, Users} from "../../models/models";
-import {TableModule} from "primeng/table";
-import {ButtonModule} from "primeng/button";
+import {Table} from "primeng/table";
 
 
 @Component({
@@ -33,5 +32,9 @@ export class DashboardComponent implements OnInit {
     });
 
   }
+
+    clear(table: Table) {
+        table.clear();
+    }
 
 }

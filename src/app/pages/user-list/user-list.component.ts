@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ProxyServiceService} from "../../shared/proxy-service.service";
+import {Users} from "../../models/models";
 
 @Component({
   selector: 'app-user-list',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  userList: Users[]=[];
+  constructor(private proxyapi: ProxyServiceService) { }
 
   ngOnInit(): void {
+
+    this.proxyapi.getUsers().subscribe((userData: Users[])=>{
+        this.userList= [...userData];
+      });
+
   }
 
 }

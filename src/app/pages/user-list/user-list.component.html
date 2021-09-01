@@ -1,1 +1,38 @@
-<p>user-list works!</p>
+<div>
+
+    <p-table
+            dataKey="id"
+            [value]="userList"
+            responsiveLayout="scroll"
+            [paginator]="true"
+            [rows]="10"
+            [rowsPerPageOptions]="[10,25,50]"
+    >
+
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="id"><p-sortIcon field="id"></p-sortIcon> <p-columnFilter type="text" field="id" display="menu"></p-columnFilter> Id</th>
+                <th pSortableColumn="avatar"><p-sortIcon field="avatar"></p-sortIcon><p-columnFilter type="text" field="avatar" display="menu"></p-columnFilter> Profile Image</th>
+                <th pSortableColumn="first_name"><p-sortIcon field="first_name"></p-sortIcon><p-columnFilter type="text" field="first_name" display="menu"></p-columnFilter> First Name</th>
+                <th pSortableColumn="last_name"><p-sortIcon field="last_name"></p-sortIcon><p-columnFilter type="text" field="last_name" display="menu"></p-columnFilter> First Name</th>
+                <th pSortableColumn="email"><p-sortIcon field="email"></p-sortIcon><p-columnFilter type="text" field="email" display="menu"></p-columnFilter> Email</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+            <tr>
+                <td>{{item.id}}</td>
+                <td><img [src]="item.avatar" alt="user image"></td>
+                <td>{{item.first_name}}</td>
+                <td>{{item.last_name}}</td>
+                <td>{{item.email}}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorleft">
+            <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+        </ng-template>
+        <ng-template pTemplate="paginatorright">
+            <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+        </ng-template>
+    </p-table>
+</div>

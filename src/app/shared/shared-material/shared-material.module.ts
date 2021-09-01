@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {MatIconModule} from "@angular/material/icon";

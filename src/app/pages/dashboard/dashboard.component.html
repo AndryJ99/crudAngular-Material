@@ -1,27 +1,18 @@
 <div>
 
     <p-table
-      #dt1
       dataKey="id"
       [value]="insuranceList"
       responsiveLayout="scroll"
       [paginator]="true"
       [rows]="10"
       [rowsPerPageOptions]="[10,25,50]"
-      [globalFilterFields]="['id','car_make','car_model','user_email','insurance']"
     >
 
-      <ng-template pTemplate="caption">
-        <div class="p-d-flex">
-			<span class="p-input-icon-left p-ml-auto">
-                <i class="pi pi-search"></i>
-                <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
-            </span>
-        </div>
-      </ng-template>
+
         <ng-template pTemplate="header">
             <tr>
-                <th pSortableColumn="id"><p-sortIcon field="id"></p-sortIcon> <p-columnFilter type="text" field="id" display="menu"></p-columnFilter> id</th>
+                <th pSortableColumn="id"><p-sortIcon field="id"></p-sortIcon> <p-columnFilter type="text" field="id" display="menu"></p-columnFilter> Id</th>
                 <th pSortableColumn="car_make"><p-sortIcon field="car_make"></p-sortIcon><p-columnFilter type="text" field="car_make" display="menu"></p-columnFilter> Car Make</th>
                 <th pSortableColumn="car_model"><p-sortIcon field="car_model"></p-sortIcon><p-columnFilter type="text" field="car_model" display="menu"></p-columnFilter> Car Model</th>
                 <th pSortableColumn="user_email"><p-sortIcon field="user_email"></p-sortIcon><p-columnFilter type="text" field="user_email" display="menu"></p-columnFilter> User</th>
