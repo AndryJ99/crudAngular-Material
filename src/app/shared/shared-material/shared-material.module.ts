@@ -7,6 +7,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {TableModule} from "primeng/table";
+import {ButtonModule} from "primeng/button";
 
 const MATERIAL_IMPORT = [
   MatToolbarModule,
@@ -15,7 +16,9 @@ const MATERIAL_IMPORT = [
   MatListModule,
   MatIconModule,
   MatButtonModule,
-  MatGridListModule
+  MatGridListModule,
+  TableModule,
+  ButtonModule
 ];
 
 @NgModule({
@@ -23,7 +26,6 @@ const MATERIAL_IMPORT = [
   imports: [...MATERIAL_IMPORT],
   exports:[...MATERIAL_IMPORT],
   providers: [
-      TableModule
   ]
 })
 export class SharedMaterialModule { }

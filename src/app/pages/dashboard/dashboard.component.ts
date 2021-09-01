@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ProxyServiceService} from "../../shared/proxy-service.service";
 import {Cars, Insurance, Users} from "../../models/models";
+import {TableModule} from "primeng/table";
+import {ButtonModule} from "primeng/button";
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +14,6 @@ export class DashboardComponent implements OnInit {
 
   insuranceList: Insurance[] = [];
 
-  insuranceHeaders: string[] = ["car-make", "car-model", "user-email", "insurance"]
 
   constructor(private proxyApi: ProxyServiceService) { }
 
@@ -28,7 +30,6 @@ export class DashboardComponent implements OnInit {
               item.car_model = data.car_model;
           })
       });
-      console.log(insuranceData);
     });
 
   }

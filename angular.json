@@ -31,6 +31,9 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
@@ -104,6 +107,37 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "generales": {
+      "projectType": "library",
+      "root": "projects/generales",
+      "sourceRoot": "projects/generales/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/generales/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/generales/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/generales/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/generales/src/test.ts",
+            "tsConfig": "projects/generales/tsconfig.spec.json",
+            "karmaConfig": "projects/generales/karma.conf.js"
           }
         }
       }
